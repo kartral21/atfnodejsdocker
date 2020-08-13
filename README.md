@@ -45,7 +45,17 @@ atfrobotdocker-6cc6cd4db4-72x6x    1/1     Running   0          89m
 To test via browser, get url of the application using below commands
 
 ```bash
-minikube service list // To get service name
+karthiks-mbp:~ karthikrallapalli$ minikube service list
+|-------------|-----------------|--------------|-----|
+|  NAMESPACE  |      NAME       | TARGET PORT  | URL |
+|-------------|-----------------|--------------|-----|
+| default     | atfnodejsdocker | http/3000    |     |
+| default     | atfrobotdocker  | No node port |
+| default     | kubernetes      | No node port |
+| kube-system | kube-dns        | No node port |
+|-------------|-----------------|--------------|-----|
+
+
 karthiks-mbp:atfnodejsdocker karthikrallapalli$ minikube service atfnodejsdocker --url
 🏃  Starting tunnel for service atfnodejsdocker.
 |-----------|-----------------|-------------|------------------------|
