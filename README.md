@@ -46,5 +46,5 @@ To test via browser, get url of the application using below commands:
 
 ```bash
 minikube service list // To get service name
-minkube service <service-name> --url // To get access url for your application
+minikube service <service-name> --url // To get access url for your application
 ```
