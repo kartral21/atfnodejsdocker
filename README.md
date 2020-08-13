@@ -1,9 +1,9 @@
-# ATF POC - Containerize NodeJS with Docker and run on Kubernetes
+# ATF POC - Containerize Node.js with docker and run on kubernetes cluster
 
 ## Prerequisites
 You must install and configure the following tools before moving forward
-* nodeJS
-* nocker
+* node.js
+* docker
 * minikube
 * kubectl
 * helm
@@ -37,7 +37,10 @@ helm install atfnodejsdocker ./atfnodejsdocker-0.1.0.tgz
 Verify the Pod & service in Kubernetes cluster 
 
 ```bash
-kubectl get pods 
+karthiks-mbp:atfnodejsdocker karthikrallapalli$ kubectl get pods
+NAME                               READY   STATUS    RESTARTS   AGE
+atfnodejsdocker-5b5fc7dd65-n7h4g   1/1     Running   0          69m
+atfrobotdocker-6cc6cd4db4-72x6x    1/1     Running   0          89m
 ```
 To test via browser, get url of the application using below commands:
 
