@@ -1,4 +1,4 @@
-# ATF POC - Containerize Node.js with docker and run on kubernetes cluster
+# ATF Proof of concept - Containerize Node.js with docker and run on kubernetes cluster
 
 ## Prerequisites
 You must install and configure the following tools before moving forward
