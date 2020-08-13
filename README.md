@@ -42,9 +42,23 @@ NAME                               READY   STATUS    RESTARTS   AGE
 atfnodejsdocker-5b5fc7dd65-n7h4g   1/1     Running   0          69m
 atfrobotdocker-6cc6cd4db4-72x6x    1/1     Running   0          89m
 ```
-To test via browser, get url of the application using below commands:
+To test via browser, get url of the application using below commands
 
 ```bash
 minikube service list // To get service name
-minikube service <service-name> --url // To get access url for your application
+karthiks-mbp:atfnodejsdocker karthikrallapalli$ minikube service atfnodejsdocker --url
+🏃  Starting tunnel for service atfnodejsdocker.
+|-----------|-----------------|-------------|------------------------|
+| NAMESPACE |      NAME       | TARGET PORT |          URL           |
+|-----------|-----------------|-------------|------------------------|
+| default   | atfnodejsdocker |             | http://127.0.0.1:59798 |
+|-----------|-----------------|-------------|------------------------|
+http://127.0.0.1:59798
+❗  Because you are using a Docker driver on darwin, the terminal needs to be open to run it.
+```
+
+Test via the following url:
+```bash
+karthiks-mbp:~ karthikrallapalli$ curl http://127.0.0.1:59798
+Hello world
 ```
