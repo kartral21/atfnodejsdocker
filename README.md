@@ -16,7 +16,7 @@ You must install and configure the following tools before moving forward
 Use docker to buid & push to docker hub
 
 ```bash
-docker build -t <your username>/<appname>
+docker build -t <your username>/<appname> .
 
 docker login                           // To login into dockerhub
 
