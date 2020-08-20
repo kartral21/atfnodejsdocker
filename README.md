@@ -23,7 +23,7 @@ docker login                           // To login into dockerhub
 docker push  <your username>/<appname> // push image to your repo
 ```
 
-### Helm
+### Running on Kubernetes cluster
 
 Use helm to package & deploy to Kubernetes cluster 
 
@@ -32,7 +32,6 @@ helm package atfnodejsdocker // package the helm chart
 
 helm install atfnodejsdocker ./atfnodejsdocker-0.1.0.tgz
 ```
-### Running on Kubernetes cluster
 
 Verify the Pod & service in Kubernetes cluster 
 
@@ -80,6 +79,14 @@ Create project in OpenShift cluster
 
 ```bash
 oc new-project atfnodejsdocker
+```
+
+Use helm to package & deploy to OpenShift cluster 
+
+```bash
+helm package atfnodejsdocker // package the helm chart
+
+helm install atfnodejsdocker ./atfnodejsdocker-0.1.0.tgz
 ```
 
 Verify the Pod & service in OpenShift cluster 
