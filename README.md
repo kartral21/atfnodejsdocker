@@ -1,13 +1,13 @@
-# ATF Proof of concept - Containerize Node.js with docker and run on kubernetes cluster
+# ATF Proof of concept - Containerize Node.js with docker and run on Kubernetes or OpenShift cluster
 
 ## Prerequisites
 You must install and configure the following tools before moving forward
 * node.js
 * docker
-* minikube
-* kubectl
+* minikube (for Kuberntes cluster only)
+* kubectl(Kuberntes cluster) or oc(OpenShift cluster)
 * helm
-* kubernetes cluster must be running
+* Kubernetes or OpenShift cluster must be running
 
 ## Usage
 
@@ -32,7 +32,7 @@ helm package atfnodejsdocker // package the helm chart
 
 helm install atfnodejsdocker ./atfnodejsdocker-0.1.0.tgz
 ```
-### Kubernetes
+### Running on Kubernetes cluster
 
 Verify the Pod & service in Kubernetes cluster 
 
@@ -42,7 +42,7 @@ NAME                               READY   STATUS    RESTARTS   AGE
 atfnodejsdocker-5b5fc7dd65-n7h4g   1/1     Running   0          69m
 atfrobotdocker-6cc6cd4db4-72x6x    1/1     Running   0          89m
 ```
-To test via browser, get url of the application using below commands
+Get the url of the application in Kubernetes cluster
 
 ```bash
 minikube service list
@@ -70,5 +70,46 @@ http://127.0.0.1:59798
 Test via the following url:
 ```bash
 curl http://127.0.0.1:59798
+Hello world
+```
+
+### Running on OpenShift cluster
+
+Create project in OpenShift cluster 
+
+```bash
+oc new-project atfnodejsdocker
+```
+
+Verify the Pod & service in OpenShift cluster 
+
+```bash
+kubectl get pods
+NAME                               READY   STATUS    RESTARTS   AGE
+atfnodejsdocker-5b5fc7dd65-vm9gv   1/1     Running   0          11m
+
+oc get svc
+NAME              TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+atfnodejsdocker   NodePort   172.25.194.218   <none>        3000:30000/TCP   12m
+```
+
+Expose the  service in OpenShift cluster 
+
+```bash
+oc expose svc/atfnodejsdocker
+route.route.openshift.io/atfnodejsdocker exposed
+```
+
+Get the url of the application in OpenShift cluster 
+
+```bash
+oc get route
+NAME              HOST/PORT                                          PATH   SERVICES          PORT   TERMINATION   WILDCARD
+atfnodejsdocker   atfnodejsdocker-atfnodejsdocker.apps-crc.testing          atfnodejsdocker   http                 None
+```
+
+Test via the url generated from HOST/PORT from the previous command:
+```bash
+curl http://atfnodejsdocker-atfnodejsdocker.apps-crc.testing
 Hello world
 ```
