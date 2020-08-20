@@ -23,6 +23,8 @@ docker login
 docker push  <your username>/<appname> 
 ```
 
+Replace the repository in values.yaml with your docker image
+
 ### Running on Kubernetes cluster
 
 Use helm to package & deploy to Kubernetes cluster 
