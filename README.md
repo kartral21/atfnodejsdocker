@@ -67,7 +67,8 @@ http://127.0.0.1:59798
 ❗  Because you are using a Docker driver on darwin, the terminal needs to be open to run it.
 ```
 
-Test via the following url:
+Test via the following url
+
 ```bash
 curl http://127.0.0.1:59798
 Hello world
@@ -108,7 +109,8 @@ NAME              HOST/PORT                                          PATH   SERV
 atfnodejsdocker   atfnodejsdocker-atfnodejsdocker.apps-crc.testing          atfnodejsdocker   http                 None
 ```
 
-Test via the url generated from HOST/PORT from the previous command:
+Test via the url generated from HOST/PORT from the previous command
+
 ```bash
 curl http://atfnodejsdocker-atfnodejsdocker.apps-crc.testing
 Hello world
