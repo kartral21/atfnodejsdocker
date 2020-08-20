@@ -18,9 +18,9 @@ Use docker to buid & push to docker hub
 ```bash
 docker build -t <your username>/<appname> .
 
-docker login                           // To login into dockerhub
+docker login                           
 
-docker push  <your username>/<appname> // push image to your repo
+docker push  <your username>/<appname> 
 ```
 
 ### Running on Kubernetes cluster
@@ -28,7 +28,7 @@ docker push  <your username>/<appname> // push image to your repo
 Use helm to package & deploy to Kubernetes cluster 
 
 ```bash
-helm package atfnodejsdocker // package the helm chart
+helm package atfnodejsdocker
 
 helm install atfnodejsdocker ./atfnodejsdocker-0.1.0.tgz
 ```
