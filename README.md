@@ -84,7 +84,7 @@ oc new-project atfnodejsdocker
 Verify the Pod & service in OpenShift cluster 
 
 ```bash
-kubectl get pods
+oc get pods
 NAME                               READY   STATUS    RESTARTS   AGE
 atfnodejsdocker-5b5fc7dd65-vm9gv   1/1     Running   0          11m
 
