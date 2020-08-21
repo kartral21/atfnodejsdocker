@@ -85,7 +85,7 @@ oc new-project atfnodejsdocker
 Use helm to package & deploy to OpenShift cluster 
 
 ```bash
-helm package atfnodejsdocker // package the helm chart
+helm package atfnodejsdocker
 
 helm install atfnodejsdocker ./atfnodejsdocker-0.1.0.tgz
 ```
