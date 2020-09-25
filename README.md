@@ -1,4 +1,4 @@
-# ATF Proof of concept - Containerize Node.js with docker and run on Kubernetes or OpenShift cluster
+# Proof of concept - Containerize Node.js with docker and run on Kubernetes or OpenShift cluster
 
 ## Prerequisites
 You must install and configure the following tools before moving forward
